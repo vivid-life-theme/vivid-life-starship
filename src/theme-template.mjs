@@ -85,6 +85,7 @@ function header(flavor, variant, kind) {
 export function buildColorsOnly(flavor, variant, tokens) {
   const palette = resolvePalette(flavor, variant, tokens);
   return `${header(flavor, variant, "colors only")}${renderPaletteTable(palette)}
+palette = "vivid_life"
 
 [directory]
 style = "bold accent"
@@ -116,8 +117,6 @@ style = "red"
 
 [docker_context]
 style = "purple"
-
-palette = "vivid_life"
 `;
 }
 
@@ -131,6 +130,7 @@ export function buildCustomPrompt(flavor, variant, tokens) {
     .join("\n");
 
   return `${header(flavor, variant, "custom prompt")}${renderPaletteTable(palette)}
+palette = "vivid_life"
 
 format = """
 $directory$git_branch$git_status$nodejs$python$rust$golang$java$docker_context$cmd_duration
@@ -160,5 +160,5 @@ format = "[$time]($style)"
 success_symbol = "[❯](accent)"
 error_symbol = "[❯](danger)"
 
-${langModules}palette = "vivid_life"`;
+${langModules}`;
 }

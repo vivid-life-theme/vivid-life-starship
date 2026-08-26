@@ -41,7 +41,10 @@ function parsePaletteTable(content) {
   const body = afterHeader.split(/\n\[/)[0];
   const palette = {};
   for (const line of body.split("\n")) {
-    const m = line.match(/^(\w+) = "(#?\w+)"$/);
+    // Only match actual color entries (hex or valid hue names), not config keys like "palette"
+    const m = line.match(
+      /^(bg|bg_soft|fg|fg_muted|accent|success|warning|danger|info|red|orange|yellow|green|blue|purple) = "(#[0-9a-f]{6})"$/,
+    );
     if (m) palette[m[1]] = m[2];
   }
   return palette;
@@ -109,6 +112,14 @@ test("buildColorsOnly emits a palette table matching resolvePalette, for every c
       const actual = parsePaletteTable(content);
       assert.deepEqual(actual, expected, `${flavor}+${variant}`);
       assert.match(content, /\npalette = "vivid_life"\n/);
+
+      // Positional guard: palette = "vivid_life" must come before the first module table
+      const paletteKeyIndex = content.indexOf('\npalette = "vivid_life"\n');
+      const firstModuleTableIndex = content.indexOf("\n[directory]");
+      assert.ok(
+        paletteKeyIndex > 0 && paletteKeyIndex < firstModuleTableIndex,
+        `${flavor}+${variant}: palette = "vivid_life" must appear before the first module table`,
+      );
     }
   }
 });
@@ -135,6 +146,14 @@ test("buildCustomPrompt emits a palette table matching resolvePalette, for every
       const expected = resolvePalette(flavor, variant, tokens);
       const actual = parsePaletteTable(content);
       assert.deepEqual(actual, expected, `${flavor}+${variant}`);
+
+      // Positional guard: palette = "vivid_life" must come before the format string
+      const paletteKeyIndex = content.indexOf('\npalette = "vivid_life"\n');
+      const formatIndex = content.indexOf('\nformat = """');
+      assert.ok(
+        paletteKeyIndex > 0 && paletteKeyIndex < formatIndex,
+        `${flavor}+${variant}: palette = "vivid_life" must appear before the format string`,
+      );
     }
   }
 });
