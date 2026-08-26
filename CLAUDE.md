@@ -6,7 +6,7 @@ Starship (cross-shell prompt) port of the Vivid Life Theme design system (4 flav
 
 | File                                       | Purpose                                                                     |
 | ------------------------------------------ | --------------------------------------------------------------------------- |
-| `build.mjs`                                | TODO: add description                                                       |
+| `build.mjs`                                | Generates 48 theme files from the design-system tokens into `themes/`       |
 | `.claude/learnings.md`                     | Auto-collected corrections/observations from config skill runs              |
 | `CLAUDE.md`                                | Project instructions, loaded every message                                  |
 | `.claude/settings.json`                    | Permissions, hooks, environment variables                                   |
@@ -22,13 +22,13 @@ Starship (cross-shell prompt) port of the Vivid Life Theme design system (4 flav
 
 ## Commands
 
-- `npm run build` — regenerate theme output from `@vivid-life-theme/design-system` (TODO: `build.mjs` not yet written)
-- `npm test` — run `src/theme-template.test.mjs` (node:test) (TODO: not yet written)
+- `npm run build` — regenerate theme output from `@vivid-life-theme/design-system` via `build.mjs`
+- `npm test` — run tests in `src/theme-template.test.mjs` (node:test)
 - `npm run format` / `npm run format:check` — prettier
 
 ## Structure
 
-- Two Starship config files per flavor×variant, mirroring https://draculatheme.com/starship: a colors-only palette file and a full custom-prompt config built on that palette. Exact file layout (`themes/` naming) is TODO — decide when building with the `vivid-life-theme` skill.
+- 48 generated theme files in `themes/` directory: two files per flavor×variant (4 flavors × 6 variants × 2 kinds), mirroring https://draculatheme.com/starship. Files are named `vivid-life-<flavor>-<variant>.toml` (colors-only palette) and `vivid-life-<flavor>-<variant>-custom.toml` (full custom-prompt config built on that palette).
 
 ## References
 
