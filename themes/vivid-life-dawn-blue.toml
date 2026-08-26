@@ -1,0 +1,52 @@
+# Vivid Life Theme — Dawn · Blue — colors only
+# Generated — do not edit by hand. Source: https://github.com/MichaelvanLaar/vivid-life-starship
+# Requires a Nerd Font (recommended: Atkinson Hyperlegible Mono Nerd Font — https://www.nerdfonts.com/font-downloads)
+
+[palettes.vivid_life]
+bg = "#d4d4d4"
+bg_soft = "#f5f5f5"
+fg = "#171717"
+fg_muted = "#404040"
+accent = "#1d4ed8"
+success = "#365314"
+warning = "#713f12"
+danger = "#7f1d1d"
+info = "#1e3a8a"
+red = "#7f1d1d"
+orange = "#7c2d12"
+yellow = "#713f12"
+green = "#365314"
+blue = "#1d4ed8"
+purple = "#7e22ce"
+palette = "vivid_life"
+
+[directory]
+style = "bold accent"
+
+[git_branch]
+style = "purple"
+
+[git_status]
+style = "danger"
+
+[character]
+success_symbol = "[❯](success)"
+error_symbol = "[❯](danger)"
+
+[nodejs]
+style = "green"
+
+[python]
+style = "yellow"
+
+[rust]
+style = "orange"
+
+[golang]
+style = "blue"
+
+[java]
+style = "red"
+
+[docker_context]
+style = "purple"

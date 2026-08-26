@@ -1,0 +1,73 @@
+# Vivid Life Theme — Twilight · Green — custom prompt
+# Generated — do not edit by hand. Source: https://github.com/MichaelvanLaar/vivid-life-starship
+# Requires a Nerd Font (recommended: Atkinson Hyperlegible Mono Nerd Font — https://www.nerdfonts.com/font-downloads)
+
+[palettes.vivid_life]
+bg = "#404040"
+bg_soft = "#525252"
+fg = "#f5f5f5"
+fg_muted = "#d4d4d4"
+accent = "#84cc16"
+success = "#bef264"
+warning = "#fef9c3"
+danger = "#fee2e2"
+info = "#dbeafe"
+red = "#fca5a5"
+orange = "#fdba74"
+yellow = "#eab308"
+green = "#84cc16"
+blue = "#93c5fd"
+purple = "#d8b4fe"
+palette = "vivid_life"
+
+format = """
+$directory$git_branch$git_status$nodejs$python$rust$golang$java$docker_context$cmd_duration
+$character"""
+
+right_format = """$time"""
+
+[directory]
+style = "bold accent"
+
+[git_branch]
+style = "fg_muted"
+
+[git_status]
+style = "danger"
+
+[cmd_duration]
+style = "warning"
+format = "[$duration]($style) "
+
+[time]
+disabled = false
+style = "fg_muted"
+format = "[$time]($style)"
+
+[character]
+success_symbol = "[❯](accent)"
+error_symbol = "[❯](danger)"
+
+[nodejs]
+style = "green"
+format = "[$symbol$version]($style) "
+
+[python]
+style = "yellow"
+format = "[$symbol$version]($style) "
+
+[rust]
+style = "orange"
+format = "[$symbol$version]($style) "
+
+[golang]
+style = "blue"
+format = "[$symbol$version]($style) "
+
+[java]
+style = "red"
+format = "[$symbol$version]($style) "
+
+[docker_context]
+style = "purple"
+format = "[$symbol$version]($style) "
