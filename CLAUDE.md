@@ -6,6 +6,7 @@ Starship (cross-shell prompt) port of the Vivid Life Theme design system (4 flav
 
 | File                                       | Purpose                                                                     |
 | ------------------------------------------ | --------------------------------------------------------------------------- |
+| `build.mjs`                                | TODO: add description                                                       |
 | `.claude/learnings.md`                     | Auto-collected corrections/observations from config skill runs              |
 | `CLAUDE.md`                                | Project instructions, loaded every message                                  |
 | `.claude/settings.json`                    | Permissions, hooks, environment variables                                   |

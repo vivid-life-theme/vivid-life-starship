@@ -28,7 +28,7 @@
   "type": "module",
   "scripts": {
     "build": "node build.mjs",
-    "test": "node --test src/theme-template.test.mjs",
+    "test": "node --test \"src/**/*.test.mjs\"",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
