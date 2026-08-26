@@ -1,0 +1,9 @@
+# Claude Code — personal files
+.claude/settings.local.json
+.claude/local.md
+
+# Dependencies
+node_modules/
+
+# Subagent-driven-development scratch workspace
+.superpowers/

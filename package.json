@@ -1,0 +1,39 @@
+{
+  "name": "vivid-life-starship",
+  "description": "A multi-flavor color theme for the Starship cross-shell prompt. 4 flavors × 6 variants = 24 themes, each with a colors-only and a custom-prompt config. WCAG AA verified.",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "author": {
+    "name": "Michael van Laar",
+    "email": "michael@van-laar.de"
+  },
+  "homepage": "https://github.com/MichaelvanLaar/vivid-life-starship",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MichaelvanLaar/vivid-life-starship.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MichaelvanLaar/vivid-life-starship/issues"
+  },
+  "keywords": [
+    "starship",
+    "starship-prompt",
+    "theme",
+    "color-theme",
+    "wcag",
+    "accessibility",
+    "vivid-life"
+  ],
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node --test src/theme-template.test.mjs",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "@vivid-life-theme/design-system": "^0.6.0",
+    "prettier": "^3.9.0"
+  }
+}
