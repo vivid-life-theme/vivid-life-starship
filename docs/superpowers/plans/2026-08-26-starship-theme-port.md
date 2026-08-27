@@ -303,7 +303,7 @@ function renderPaletteTable(palette) {
 function header(flavor, variant, kind) {
   return [
     `# Vivid Life Theme — ${FLAVOR_LABEL[flavor]} · ${VARIANT_LABEL[variant]} — ${kind}`,
-    "# Generated — do not edit by hand. Source: https://github.com/MichaelvanLaar/vivid-life-starship",
+    "# Generated — do not edit by hand. Source: https://github.com/vivid-life-theme/vivid-life-starship",
     "# Requires a Nerd Font (recommended: Atkinson Hyperlegible Mono Nerd Font — https://www.nerdfonts.com/font-downloads)",
     "",
     "",

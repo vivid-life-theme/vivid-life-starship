@@ -8,13 +8,13 @@
     "name": "Michael van Laar",
     "email": "michael@van-laar.de"
   },
-  "homepage": "https://github.com/MichaelvanLaar/vivid-life-starship",
+  "homepage": "https://github.com/vivid-life-theme/vivid-life-starship",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MichaelvanLaar/vivid-life-starship.git"
+    "url": "git+https://github.com/vivid-life-theme/vivid-life-starship.git"
   },
   "bugs": {
-    "url": "https://github.com/MichaelvanLaar/vivid-life-starship/issues"
+    "url": "https://github.com/vivid-life-theme/vivid-life-starship/issues"
   },
   "keywords": [
     "starship",
