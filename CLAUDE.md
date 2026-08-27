@@ -47,8 +47,7 @@ Use the `vivid-life-theme` skill to fetch the design-system tokens (`tokens.json
 
 ## Learnings
 
-When the user corrects a mistake or points out a recurring issue, append a one-line
-summary to .claude/learnings.md. Don't modify CLAUDE.md directly.
+When the user corrects a mistake or points out a recurring issue, append a one-line summary to .claude/learnings.md. Don't modify CLAUDE.md directly.
 
 ## Compact Instructions
 
