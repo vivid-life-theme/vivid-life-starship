@@ -113,12 +113,18 @@ test("buildColorsOnly emits a palette table matching resolvePalette, for every c
       assert.deepEqual(actual, expected, `${flavor}+${variant}`);
       assert.match(content, /\npalette = "vivid_life"\n/);
 
-      // Positional guard: palette = "vivid_life" must come before the first module table
+      // Positional guard: palette = "vivid_life" must come before [palettes.vivid_life]
+      // itself — TOML assigns a bare key to whichever table is currently open, so
+      // placing it after the table's entries would make it a stray key inside
+      // [palettes.vivid_life] instead of the root-level palette selector.
       const paletteKeyIndex = content.indexOf('\npalette = "vivid_life"\n');
+      const paletteTableIndex = content.indexOf("\n[palettes.vivid_life]");
       const firstModuleTableIndex = content.indexOf("\n[directory]");
       assert.ok(
-        paletteKeyIndex > 0 && paletteKeyIndex < firstModuleTableIndex,
-        `${flavor}+${variant}: palette = "vivid_life" must appear before the first module table`,
+        paletteKeyIndex > 0 &&
+          paletteKeyIndex < paletteTableIndex &&
+          paletteTableIndex < firstModuleTableIndex,
+        `${flavor}+${variant}: palette = "vivid_life" must appear before [palettes.vivid_life], which must appear before the first module table`,
       );
     }
   }
@@ -147,22 +153,24 @@ test("buildCustomPrompt emits a palette table matching resolvePalette, for every
       const actual = parsePaletteTable(content);
       assert.deepEqual(actual, expected, `${flavor}+${variant}`);
 
-      // Positional guard: the format string must come before [palettes.vivid_life] /
-      // palette = "vivid_life", which in turn must come before the first module table.
-      // (Starship 1.26.0 miscomputes $fill's width when any table precedes `format` —
-      // see https://github.com/vivid-life-theme/vivid-life-starship/issues/2.)
+      // Positional guard: format must come before palette = "vivid_life", which must
+      // come before [palettes.vivid_life], which must come before the first module
+      // table. (Starship 1.26.0 miscomputes $fill's width when any table precedes
+      // `format` — see https://github.com/vivid-life-theme/vivid-life-starship/issues/2.
+      // Separately, TOML assigns a bare key to whichever table is currently open, so
+      // palette = "vivid_life" must precede [palettes.vivid_life] itself, not just
+      // follow it, or it becomes a stray key inside that table instead of the
+      // root-level palette selector.)
       const formatIndex = content.indexOf('\nformat = """');
-      const paletteTableIndex = content.indexOf("\n[palettes.vivid_life]");
       const paletteKeyIndex = content.indexOf('\npalette = "vivid_life"\n');
+      const paletteTableIndex = content.indexOf("\n[palettes.vivid_life]");
       const firstModuleTableIndex = content.indexOf("\n[directory]");
       assert.ok(
-        formatIndex > 0 && formatIndex < paletteTableIndex,
-        `${flavor}+${variant}: format string must appear before [palettes.vivid_life]`,
-      );
-      assert.ok(
-        paletteKeyIndex > paletteTableIndex &&
-          paletteKeyIndex < firstModuleTableIndex,
-        `${flavor}+${variant}: palette = "vivid_life" must appear between the palette table and the first module table`,
+        formatIndex > 0 &&
+          formatIndex < paletteKeyIndex &&
+          paletteKeyIndex < paletteTableIndex &&
+          paletteTableIndex < firstModuleTableIndex,
+        `${flavor}+${variant}: expected order format -> palette key -> [palettes.vivid_life] -> first module table`,
       );
     }
   }

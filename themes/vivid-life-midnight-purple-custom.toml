@@ -6,6 +6,8 @@ format = """
 $directory$git_branch$git_status$nodejs$python$rust$golang$java$docker_context$cmd_duration$fill$time
 $character"""
 
+palette = "vivid_life"
+
 [palettes.vivid_life]
 bg = "#171717"
 bg_soft = "#404040"
@@ -22,7 +24,6 @@ yellow = "#eab308"
 green = "#84cc16"
 blue = "#93c5fd"
 purple = "#d8b4fe"
-palette = "vivid_life"
 
 [directory]
 style = "bold accent"
