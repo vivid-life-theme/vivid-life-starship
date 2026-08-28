@@ -96,7 +96,17 @@ style = "bold accent"
 style = "purple"
 
 [git_status]
-style = "danger"
+style = "fg_muted"
+conflicted = "[=$count](warning)"
+ahead = "[⇡$count](fg_muted)"
+behind = "[⇣$count](fg_muted)"
+diverged = "[⇕⇡$ahead_count⇣$behind_count](fg_muted)"
+untracked = "[?$count](success)"
+stashed = "[\\$$count](fg_muted)"
+modified = "[!$count](info)"
+staged = "[+$count](warning)"
+renamed = "[»$count](info)"
+deleted = "[✘$count](danger)"
 
 [character]
 success_symbol = "[❯](success)"
@@ -147,7 +157,17 @@ style = "bold accent"
 style = "fg_muted"
 
 [git_status]
-style = "danger"
+style = "fg_muted"
+conflicted = "[=$count](warning)"
+ahead = "[⇡$count](fg_muted)"
+behind = "[⇣$count](fg_muted)"
+diverged = "[⇕⇡$ahead_count⇣$behind_count](fg_muted)"
+untracked = "[?$count](success)"
+stashed = "[\\$$count](fg_muted)"
+modified = "[!$count](info)"
+staged = "[+$count](warning)"
+renamed = "[»$count](info)"
+deleted = "[✘$count](danger)"
 
 [cmd_duration]
 style = "warning"
