@@ -133,10 +133,8 @@ export function buildCustomPrompt(flavor, variant, tokens) {
 palette = "vivid_life"
 
 format = """
-$directory$git_branch$git_status$nodejs$python$rust$golang$java$docker_context$cmd_duration
+$directory$git_branch$git_status$nodejs$python$rust$golang$java$docker_context$cmd_duration$fill$time
 $character"""
-
-right_format = """$time"""
 
 [directory]
 style = "bold accent"
@@ -150,6 +148,10 @@ style = "danger"
 [cmd_duration]
 style = "warning"
 format = "[$duration]($style) "
+
+[fill]
+style = "fg_muted"
+symbol = " "
 
 [time]
 disabled = false
