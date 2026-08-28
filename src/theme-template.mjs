@@ -84,8 +84,9 @@ function header(flavor, variant, kind) {
 
 export function buildColorsOnly(flavor, variant, tokens) {
   const palette = resolvePalette(flavor, variant, tokens);
-  return `${header(flavor, variant, "colors only")}${renderPaletteTable(palette)}
-palette = "vivid_life"
+  return `${header(flavor, variant, "colors only")}palette = "vivid_life"
+
+${renderPaletteTable(palette)}
 
 [directory]
 style = "bold accent"
@@ -129,12 +130,13 @@ export function buildCustomPrompt(flavor, variant, tokens) {
     )
     .join("\n");
 
-  return `${header(flavor, variant, "custom prompt")}${renderPaletteTable(palette)}
-palette = "vivid_life"
-
-format = """
+  return `${header(flavor, variant, "custom prompt")}format = """
 $directory$git_branch$git_status$nodejs$python$rust$golang$java$docker_context$cmd_duration$fill$time
 $character"""
+
+palette = "vivid_life"
+
+${renderPaletteTable(palette)}
 
 [directory]
 style = "bold accent"

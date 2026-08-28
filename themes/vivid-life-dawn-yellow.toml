@@ -2,6 +2,8 @@
 # Generated — do not edit by hand. Source: https://github.com/vivid-life-theme/vivid-life-starship
 # Requires a Nerd Font (recommended: Atkinson Hyperlegible Mono Nerd Font — https://www.nerdfonts.com/font-downloads)
 
+palette = "vivid_life"
+
 [palettes.vivid_life]
 bg = "#d4d4d4"
 bg_soft = "#f5f5f5"
@@ -18,7 +20,6 @@ yellow = "#713f12"
 green = "#365314"
 blue = "#1d4ed8"
 purple = "#7e22ce"
-palette = "vivid_life"
 
 [directory]
 style = "bold accent"
