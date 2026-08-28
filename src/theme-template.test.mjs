@@ -147,12 +147,22 @@ test("buildCustomPrompt emits a palette table matching resolvePalette, for every
       const actual = parsePaletteTable(content);
       assert.deepEqual(actual, expected, `${flavor}+${variant}`);
 
-      // Positional guard: palette = "vivid_life" must come before the format string
-      const paletteKeyIndex = content.indexOf('\npalette = "vivid_life"\n');
+      // Positional guard: the format string must come before [palettes.vivid_life] /
+      // palette = "vivid_life", which in turn must come before the first module table.
+      // (Starship 1.26.0 miscomputes $fill's width when any table precedes `format` —
+      // see https://github.com/vivid-life-theme/vivid-life-starship/issues/2.)
       const formatIndex = content.indexOf('\nformat = """');
+      const paletteTableIndex = content.indexOf("\n[palettes.vivid_life]");
+      const paletteKeyIndex = content.indexOf('\npalette = "vivid_life"\n');
+      const firstModuleTableIndex = content.indexOf("\n[directory]");
       assert.ok(
-        paletteKeyIndex > 0 && paletteKeyIndex < formatIndex,
-        `${flavor}+${variant}: palette = "vivid_life" must appear before the format string`,
+        formatIndex > 0 && formatIndex < paletteTableIndex,
+        `${flavor}+${variant}: format string must appear before [palettes.vivid_life]`,
+      );
+      assert.ok(
+        paletteKeyIndex > paletteTableIndex &&
+          paletteKeyIndex < firstModuleTableIndex,
+        `${flavor}+${variant}: palette = "vivid_life" must appear between the palette table and the first module table`,
       );
     }
   }

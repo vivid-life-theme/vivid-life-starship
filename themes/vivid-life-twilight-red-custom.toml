@@ -2,6 +2,10 @@
 # Generated — do not edit by hand. Source: https://github.com/vivid-life-theme/vivid-life-starship
 # Requires a Nerd Font (recommended: Atkinson Hyperlegible Mono Nerd Font — https://www.nerdfonts.com/font-downloads)
 
+format = """
+$directory$git_branch$git_status$nodejs$python$rust$golang$java$docker_context$cmd_duration$fill$time
+$character"""
+
 [palettes.vivid_life]
 bg = "#404040"
 bg_soft = "#525252"
@@ -19,10 +23,6 @@ green = "#84cc16"
 blue = "#93c5fd"
 purple = "#d8b4fe"
 palette = "vivid_life"
-
-format = """
-$directory$git_branch$git_status$nodejs$python$rust$golang$java$docker_context$cmd_duration$fill$time
-$character"""
 
 [directory]
 style = "bold accent"

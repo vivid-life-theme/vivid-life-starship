@@ -129,12 +129,12 @@ export function buildCustomPrompt(flavor, variant, tokens) {
     )
     .join("\n");
 
-  return `${header(flavor, variant, "custom prompt")}${renderPaletteTable(palette)}
-palette = "vivid_life"
-
-format = """
+  return `${header(flavor, variant, "custom prompt")}format = """
 $directory$git_branch$git_status$nodejs$python$rust$golang$java$docker_context$cmd_duration$fill$time
 $character"""
+
+${renderPaletteTable(palette)}
+palette = "vivid_life"
 
 [directory]
 style = "bold accent"
