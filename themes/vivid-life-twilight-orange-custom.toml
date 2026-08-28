@@ -6,6 +6,7 @@ format = """
 $directory$git_branch$git_status$nodejs$python$rust$golang$java$docker_context$cmd_duration$fill$time
 $character"""
 
+command_timeout = 1000
 palette = "vivid_life"
 
 [palettes.vivid_life]

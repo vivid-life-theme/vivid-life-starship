@@ -176,6 +176,24 @@ test("buildCustomPrompt emits a palette table matching resolvePalette, for every
   }
 });
 
+test("buildColorsOnly and buildCustomPrompt raise command_timeout above the 500ms default", () => {
+  for (const build of [buildColorsOnly, buildCustomPrompt]) {
+    const content = build("dawn", "blue", tokens);
+    assert.match(content, /\ncommand_timeout = 1000\n/);
+
+    // Positional guard: command_timeout must appear before palette = "vivid_life"
+    // (both are root-level scalar keys, so order between them doesn't affect
+    // correctness, but keeping them adjacent at the top keeps the generated
+    // file readable).
+    const timeoutIndex = content.indexOf("\ncommand_timeout = 1000\n");
+    const paletteKeyIndex = content.indexOf('\npalette = "vivid_life"\n');
+    assert.ok(
+      timeoutIndex > 0 && timeoutIndex < paletteKeyIndex,
+      'command_timeout must appear before palette = "vivid_life"',
+    );
+  }
+});
+
 test("buildCustomPrompt pins every language module to its documented fixed hue", () => {
   const content = buildCustomPrompt("dawn", "blue", tokens);
   for (const [mod, hue] of Object.entries(LANGUAGE_MODULE_HUE)) {
