@@ -2,6 +2,7 @@
 # Generated — do not edit by hand. Source: https://github.com/vivid-life-theme/vivid-life-starship
 # Requires a Nerd Font (recommended: Atkinson Hyperlegible Mono Nerd Font — https://www.nerdfonts.com/font-downloads)
 
+command_timeout = 1000
 palette = "vivid_life"
 
 [palettes.vivid_life]
