@@ -10,6 +10,7 @@ Starship (cross-shell prompt) port of the Vivid Life Theme design system (4 flav
 | `.claude/learnings.md`                     | Auto-collected corrections/observations from config skill runs              |
 | `CLAUDE.md`                                | Project instructions, loaded every message                                  |
 | `.claude/settings.json`                    | Permissions, hooks, environment variables                                   |
+| `.claude/skills/release/SKILL.md`          | TODO: add description                                                       |
 | `.claude/skills/vivid-life-theme/SKILL.md` | Fetches the design-system tokens/foundation for building themed artifacts   |
 | `.githooks/pre-commit`                     | Runs `scripts/sync-config-table.sh` before each commit                      |
 | `.github/workflows/claude-code-review.yml` | Auto-review on PR open/update                                               |
