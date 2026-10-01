@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-10-01
+
+### Changed
+
+- Bumped `@vivid-life-theme/design-system` to 0.11.0
+- Dawn: `red` is now `#991b1b`, `yellow` is `#854d0e`, `green` is `#3f6212`
+- Noon: `yellow` is now `#854d0e`, `green` is `#3f6212`
+
 ## [0.1.0] - 2026-09-01
 
 ### Added
