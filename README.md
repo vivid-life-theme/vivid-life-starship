@@ -37,16 +37,25 @@ Clone the repo, then copy your pick to Starship's config location:
 
 ```bash
 git clone https://github.com/vivid-life-theme/vivid-life-starship.git
+mkdir -p ~/.config
 cp vivid-life-starship/themes/vivid-life-midnight-purple.toml ~/.config/starship.toml
 ```
 
 Heads-up: that `cp` replaces your existing `starship.toml`. Back it up first if it holds three years of lovingly tuned config.
 
-Or point `STARSHIP_CONFIG` at a theme file without copying, e.g. in `~/.bashrc` / `~/.zshrc` (fish users: `set -gx STARSHIP_CONFIG …` in `~/.config/fish/config.fish`):
+Or point `STARSHIP_CONFIG` at a theme file without copying, e.g. in `~/.bashrc` / `~/.zshrc`:
 
 ```bash
 export STARSHIP_CONFIG=~/path/to/vivid-life-starship/themes/vivid-life-midnight-purple-custom.toml
 ```
+
+Fish users put this in `~/.config/fish/config.fish` instead:
+
+```fish
+set -gx STARSHIP_CONFIG ~/path/to/vivid-life-starship/themes/vivid-life-midnight-purple-custom.toml
+```
+
+Either way, replace `~/path/to` with wherever you cloned the repo.
 
 ### Choose a theme
 
