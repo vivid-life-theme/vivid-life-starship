@@ -183,7 +183,7 @@ style = "fg_muted"
 format = "[$time]($style)"
 
 [character]
-success_symbol = "[❯](accent)"
+success_symbol = "[❯](success)"
 error_symbol = "[❯](danger)"
 
 ${langModules}`;

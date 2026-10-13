@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Custom prompt: the success `❯` uses `success` instead of the accent, as the design system's `prompt_roles` specify. On the Red variants it no longer shares a hue with the error `❯`.
+
 ## [0.1.1] - 2026-10-01
 
 ### Changed

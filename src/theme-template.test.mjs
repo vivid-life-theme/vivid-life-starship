@@ -204,12 +204,12 @@ test("buildCustomPrompt pins every language module to its documented fixed hue",
   }
 });
 
-test("buildCustomPrompt uses accent only for directory and character", () => {
+test("buildCustomPrompt uses accent only for the directory", () => {
   const content = buildCustomPrompt("noon", "green", tokens);
   const directorySection = content.split("[directory]")[1].split("\n\n")[0];
   assert.match(directorySection, /style = "bold accent"/);
   const characterSection = content.split("[character]")[1];
-  assert.match(characterSection, /success_symbol = "\[❯\]\(accent\)"/);
+  assert.match(characterSection, /success_symbol = "\[❯\]\(success\)"/);
   assert.match(characterSection, /error_symbol = "\[❯\]\(danger\)"/);
 
   for (const mod of ["git_branch", "git_status", "cmd_duration", "time"]) {

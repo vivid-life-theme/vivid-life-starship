@@ -17,7 +17,7 @@ Starship draws on top of whatever background your terminal has, so pair it with 
 
 ## Variants
 
-Each flavor comes in six accent variants: **Red · Orange · Yellow · Green · Blue · Purple**. The variant re-tints the accent (the directory, plus the prompt character in the custom layout); status and language colors stay put across variants.
+Each flavor comes in six accent variants: **Red · Orange · Yellow · Green · Blue · Purple**. The variant re-tints the accent (the directory); status and language colors stay put across variants.
 
 ## Requirements
 
