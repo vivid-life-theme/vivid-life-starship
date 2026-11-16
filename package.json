@@ -33,7 +33,7 @@
     "format:check": "prettier --check ."
   },
   "devDependencies": {
-    "@vivid-life-theme/design-system": "^0.14.1",
+    "@vivid-life-theme/design-system": "^0.14.2",
     "prettier": "^3.10.1"
   }
 }
