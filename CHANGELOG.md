@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.2] - 2026-11-16
+
 ### Changed
 
 - Design-system dependency bumped to 0.14.1. No prompt color changes: the prompt's colors already clear 4.5:1 on the new terminal backgrounds (`#171717` / `#404040` / `#d4d4d4` / `#f5f5f5`).
