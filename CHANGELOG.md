@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Design-system dependency bumped to 0.14.1. No prompt color changes: the prompt's colors already clear 4.5:1 on the new terminal backgrounds (`#171717` / `#404040` / `#d4d4d4` / `#f5f5f5`).
 - Custom prompt: the success `❯` uses `success` instead of the accent, as the design system's `prompt_roles` specify. On the Red variants it no longer shares a hue with the error `❯`.
 
 ## [0.1.1] - 2026-10-01
